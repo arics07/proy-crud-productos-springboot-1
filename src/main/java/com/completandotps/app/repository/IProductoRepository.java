@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.completandotps.app.models.Producto;
 
-@Repository("IProductoRepository")
+@Repository("productoRepository")
 public interface IProductoRepository extends MongoRepository<Producto, Serializable>{
 
 	//DENTRO DE ESTE BLOQUE DE CÓDIGO VOY A HACER LAS CONSULTAS
@@ -16,4 +16,7 @@ public interface IProductoRepository extends MongoRepository<Producto, Serializa
 	//Internamente actúa como unaquerry de consulta
 	//Busca en base de datos un producto por medio del ID
 	Producto findById(String id);
+	
+	//Elimina en BBDD un Producto por medio del ID
+	Producto deleteById(String id);
 }
